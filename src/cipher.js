@@ -1,65 +1,42 @@
 const cipher = {
-  criptografar:function criptografar(mensagem, offset){
+  encode:function criptografar(offset, mensagem){
       let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      let palavraCodficada = mensagem.toUpperCase();
-      let valorDeslocamento = Number(offset);
       let resultado = "";
-      let tamanhoDaPalavra  = palavraCodficada.length;
-      var contador = 0;
-      let espaco ="     "
-      while(contador<tamanhoDaPalavra){
-            let posicaoLetra = palavraCodficada.charAt(contador);
-        if (posicaoLetra !=" "){
-            let noAlfabeto = alfabeto.indexOf(posicaoLetra);
-            let deslocando = (noAlfabeto+valorDeslocamento)%26;
+      let tamanhoDaPalavra = mensagem.length;
+      for(let contador = 0; contador<tamanhoDaPalavra; contador ++){
+        let letra = mensagem.toUpperCase().charAt(contador);
+        if (letra !=" "){
+            let noAlfabeto = alfabeto.indexOf(letra);
+            let deslocando = (noAlfabeto+Number(offset))%26;
             let novaletra = alfabeto.charAt(deslocando);
             resultado = resultado+novaletra;
-            contador = contador +1;
-            console.log(resultado)
           }
         else {
-          resultado = resultado+espaco;
-          console.log(resultado)
-          contador = contador+1
+          resultado = resultado + "  ";
         }    
       }  
   return resultado
-  console.log(resultado)
   },
 
-  descriptografar: function descriptografar(mensagem,offset){
-      let alfabeto = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
-      let palavraCodficada = mensagem.toUpperCase();
-      let valorDeslocamento = Number(offset);
-      let resultado = "";
-      let tamanhoDaPalavra  = palavraCodficada.length;
-      var contador = 0;
-      let espaco ="     "
-      while(contador<tamanhoDaPalavra){
-            let posicaoLetra = palavraCodficada.charAt(contador);
-            //console.log(posicaoLetra)
-        if (posicaoLetra !=" "){
-            let noAlfabeto = alfabeto.indexOf(posicaoLetra);
-            //console.log(noAlfabeto)
-            let deslocando = (noAlfabeto+valorDeslocamento)%26;
-            //console.log(deslocando)
-            let novaletra = alfabeto.charAt(deslocando);
-            //console.log(novaletra)
-            resultado = resultado+novaletra;
-            contador = contador +1;
-            console.log(resultado)
-          }
-        else {
-          resultado = resultado+espaco;
-          console.log(resultado)
-          contador = contador+1
-
-        }    
-      }  
-  return resultado
-  console.log(resultado)
-  }
-   };
-
+  decode: function descriptografar(offset,mensagem){
+    let alfabeto = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+    let resultado = "";
+    let tamanhoDaPalavra = mensagem.length;
+    for(let contador = 0; contador<tamanhoDaPalavra; contador ++){
+      let letra = mensagem.toUpperCase().charAt(contador);
+      if (letra !=" "){
+          let noAlfabeto = alfabeto.indexOf(letra);
+          let deslocando = (noAlfabeto+Number(offset))%26;
+          let novaletra = alfabeto.charAt(deslocando);
+          resultado = resultado+novaletra;
+        }
+      else {
+        resultado = resultado + "  ";
+      }    
+    }  
+return resultado
+},
+      
+};
 export default cipher;
   
