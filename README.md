@@ -4,7 +4,7 @@ Neste projeto criei minha primeira
 aplicação web do _bootcamp_. Nela o usuário poderá cifrar e decrifrar um texto
 indicando a chave de deslocamento (_offset_). 
 
-Optou-se por uma interface simples que apresentas ao usuário o funcionamento da Criptografia de César,
+Optou-se por uma interface simples que apresenta ao usuário o funcionamento da Criptografia de César,
 e dá a ele a oportunidade de testá-la. 
 
 ### _Como usar a aplicação?_
