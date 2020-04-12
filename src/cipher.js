@@ -11,13 +11,11 @@ const cipher = {
             let deslocando = (noAlfabeto+Number(offset))%26;
             let novaletra = alfabeto.charAt(deslocando);
             resultado = resultado+novaletra;
-          }
-        else {
+          }else {
           resultado = resultado + "  ";
         }    
       } 
-    }
-    else{
+    }else{
       throw new TypeError;
     }   
   return resultado
@@ -34,13 +32,11 @@ const cipher = {
           let deslocando = (noAlfabeto+Number(offset))%26;
           let novaletra = alfabeto.charAt(deslocando);
           resultado = resultado+novaletra;
-        }
-       else {
+        }else {
         resultado = resultado + "  ";
       }    
     }  
-    }
-    else{
+    }else{
       throw new TypeError;
     }  
 return resultado

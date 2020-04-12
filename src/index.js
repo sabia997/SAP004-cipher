@@ -18,6 +18,6 @@ function printMensagemDescifrada (){
     let offset1 = document.getElementById("offset").value
     let mensagem1 = document.getElementById("paracifrar").value
     document.getElementById("printar").innerHTML = cipher.decode(offset1, mensagem1);
-    document.getElementById("mensagem").innerText ="A mensagem descifrada é:  "
+    document.getElementById("mensagem").innerText ="A mensagem decifrada é:  "
     return
 }
