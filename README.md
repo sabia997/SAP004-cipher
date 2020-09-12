@@ -1,7 +1,7 @@
 # Cifra de César
 
 Neste projeto criei minha primeira
-aplicação web do _bootcamp_. Nela o usuário poderá cifrar e decrifrar um texto
+aplicação web do _bootcamp_ da Laboratória. Nela o usuário poderá cifrar e decrifrar um texto
 indicando a chave de deslocamento (_offset_). 
 
 Optou-se por uma interface simples que apresenta ao usuário o funcionamento da Criptografia de César,
